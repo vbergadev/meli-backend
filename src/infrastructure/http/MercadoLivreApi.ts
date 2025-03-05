@@ -24,7 +24,7 @@ export class MercadoLivreApi implements ProductRepository {
         params: { q: query, limit },
       },
     );
-    return response.data.results.slice(0, limit); // Garantir que apenas 'limit' itens sejam retornados
+    return response.data.results.slice(0, limit);
   }
 
   static async searchProducts(
