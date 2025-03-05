@@ -1,8 +1,17 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import * as express from 'express';
+import * as cors from 'cors';
+import { ProductController } from './presentation/ProductController';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
-}
-bootstrap();
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(cors());
+
+app.get('/api/items', (req, res) => ProductController.searchProducts(req, res));
+app.get('/api/items/:id', (req, res) =>
+  ProductController.getProductById(req, res),
+);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
