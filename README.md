@@ -37,13 +37,12 @@ meli-backend
    npm install
    ```
 
-3. **Configure environment variables:**
-   Create a `.env` file in the root directory and add the necessary environment variables, such as API keys and database connection strings.
-
-4. **Run the application:**
+3. **Run the application:**
    ```
    npm start
    ```
+
+**Note:** This project uses Node.js v19.2.0.
 
 ## Usage
 
@@ -69,3 +68,4 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
